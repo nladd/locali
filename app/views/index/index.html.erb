@@ -38,4 +38,10 @@
   </div>
 
 </div>
+
+<%= javascript_tag do %>
+$(document).ready(function() {
+  setTimeout(function(){ $("#carousel<%= index %>").carousel('pause'); }, 2500);
+});
+<% end %>
 <% end %>
