@@ -1,8 +1,12 @@
 
 <div class="row">
-  <%= f.nested_fields_for :photos, @album.photos.new do |pf| %>
-  <div class="col-lg-6">
-      <%= pf.file_field :image %>
+  <%= f.nested_fields_for :photos do |pf| %>
+    <div class="col-lg-6">
+      <% if pf.object.persisted? %>
+        <%=  image_tag pf.object.image.url(:thumb) %>
+      <% else %>
+        <%= pf.file_field :image %>
+      <% end %>
   </div>
   <div class="col-lg-6">
     <%= pf.remove_nested_fields_link "Delete photo" if pf.object.persisted? %>
