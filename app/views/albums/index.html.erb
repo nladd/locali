@@ -1,0 +1,20 @@
+
+<div class="row">
+  <div class="col-lg-2">
+    <%= link_to "New Album", new_album_path, class: "btn btn-default active" %>
+  </div>
+</div>
+
+<% @albums.each do |album| %>
+  <div class="row marketing">
+    <div class="col-md-6">
+      <h5><%= link_to album.title, edit_album_path(album) %></h5>
+    </div>
+    <div class="col-md-3">
+      <p><%= link_to "Delete", album_path(album), {method: :delete, confirm: "Are you sure you want to remove the #{album.title} album?"} %></p>
+    </div>
+    <div class="col-md-3">
+      <p><%= link_to "Edit", edit_album_path(album) %></p>
+    </div>
+  </div>
+<% end %>

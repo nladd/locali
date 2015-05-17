@@ -1,0 +1,13 @@
+
+<h2>New Album</h2>
+
+<%= form_for @album do |f| %>
+<div class="row">
+  <div class="col-lg-6">
+    <%= f.text_field :title %>
+  </div>
+  <div class="col-lg-6">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

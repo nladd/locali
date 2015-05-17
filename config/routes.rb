@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       sign_out: "logout",
       sign_up:  "register"
   }
+
+  resources :albums
 end
